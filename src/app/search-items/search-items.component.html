@@ -1,0 +1,16 @@
+<div class="form-group">
+    <label for="Search">Search for drugs or mechanism</label>
+    <input type="text" #searchString class="form-control" name="Search" id="Search" aria-describedby="helpId" placeholder=""
+      (keyup)="search(searchString.value)">
+    <small id="helpId" class="form-text text-muted">Enter the search string</small>
+  </div>
+  
+  <div class="leftSide">
+    <label for="searchItems">Results</label>
+    <ul class="list-group">
+  
+      <li *ngFor="let searchItem of searchItems"  class="list-group-item " ><a routerLinkActive="active"[routerLink]="[ 'search', searchItem.id, searchItem.type ]">{{searchItem.name }}</a></li>
+    </ul>
+  </div>
+  
+  
